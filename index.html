@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App (week5)</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src-5/style-week5.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta:wght@800&family=Roboto+Serif:ital,opsz,wght@0,8..144,400;0,8..144,500;0,8..144,600;1,8..144,300;1,8..144,400;1,8..144,500;1,8..144,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="search-form">
+        <div class="mb-3">
+          <div class="row">
+            <div class="col-6">
+              <input
+                type="search"
+                class="form-control"
+                placeholder="Enter your city"
+                id="city-input"
+              />
+            </div>
+            <div class="col-3">
+              <input
+                type="submit"
+                value="Search"
+                class="btn btn-primary w-100"
+                id="search-button"
+              />
+            </div>
+            <div class="col-3">
+              <input
+                type="submit"
+                value="Current"
+                class="btn btn-success w-100"
+                id="current-button"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header">
+        <div class="row">
+          <div class="col-4">
+            <ul class="indicator">
+              <li>💧Humidity: <span id="humidity">85</span> %</li>
+              <li>💨Wind: <span id="wind">18</span> km/h</li>
+            </ul>
+          </div>
+          <div class="col-4">
+            <div class="mainTemperature">
+              <span id="mainTemperature">25</span>
+              <a href="#" id="celsius" class="celsius">°C</a>
+              <span class="separator">|</span>
+              <a href="#" id="fahrenheit" class="fahrenheit">°F</a>
+            </div>
+          </div>
+          <div class="col-4">
+            <h1 id="main-city">Poltava</h1>
+            <h6 class="weekDays">Friday 13:12</h6>
+            <h5 id="short-describe">Sunny</h5>
+          </div>
+        </div>
+      </div>
+      <div class="weather-forecast">
+        <div class="row">
+          <div class="col">
+            <ul class="future-weather">
+              <li class="day-week">Saturday</li>
+              <li class="icon">🌞</li>
+              <li class="day-temperature">28℃</li>
+              <li class="night-temperature">14℃</li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul class="future-weather">
+              <li class="day-week">Sunday</li>
+              <li class="icon">🌞</li>
+              <li class="day-temperature">25℃</li>
+              <li class="night-temperature">13℃</li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul class="future-weather">
+              <li class="day-week">Monday</li>
+              <li class="icon">🌤</li>
+              <li class="day-temperature">29℃</li>
+              <li class="night-temperature">17℃</li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul class="future-weather">
+              <li class="day-week">Tuesday</li>
+              <li class="icon">🌦</li>
+              <li class="day-temperature">32℃</li>
+              <li class="night-temperature">18℃</li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul class="future-weather">
+              <li class="day-week">Wednesday</li>
+              <li class="icon">⛈</li>
+              <li class="day-temperature">33℃</li>
+              <li class="night-temperature">19℃</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="coders-name">
+        This page was built by Natalia Kalenska 💙💛
+      </div>
+    </div>
+    <script src="src-5/app-week5.js"></script>
+  </body>
+</html>
