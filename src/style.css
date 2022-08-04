@@ -69,3 +69,8 @@ h1 {
   font-size: 15px;
   font-family: monospace;
 }
+
+.coders-link {
+  font-size: 12px;
+  margin-left: 70px;
+}
