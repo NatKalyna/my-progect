@@ -74,12 +74,12 @@ function searchCity(city) {
 
 function nowCity(event) {
   event.preventDefault();
-  let input = document.querySelector("#city-input").value;
-  searchCity(input);
+  let cityInputElement = document.querySelector("#city-input");
+  searchCity(cityInputElement.value);
 }
 
-let newCity = document.querySelector("#search-button");
-newCity.addEventListener("click", nowCity);
+let newCity = document.querySelector("#search-form");
+newCity.addEventListener("submit", nowCity);
 
 function showPosition(position) {
   let apiKey = "c00b6e3e1cc217d87916a8b794f7ca77";
