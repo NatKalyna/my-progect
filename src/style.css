@@ -19,6 +19,10 @@ h6 {
   margin-bottom: 5px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
   max-width: 900px;
   margin: 0 auto;
@@ -40,22 +44,8 @@ h6 {
   padding-top: 20px;
 }
 
-.mainTemperature {
+.headerTemperature {
   font-size: 50px;
-}
-
-.celsius,
-.fahrenheit,
-.separator {
-  color: rgb(32, 33, 36);
-  display: inline-block;
-  font-family: arial, sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  height: 24px;
-  line-height: 24px;
-  margin-top: 10px;
-  vertical-align: top;
 }
 
 .future-weather {
@@ -79,4 +69,24 @@ h6 {
 .coders-link {
   font-size: 12px;
   margin-left: 70px;
+}
+
+#celsius-link,
+#fahrenheit-link,
+.separator {
+  color: rgb(32, 33, 36);
+  display: inline-block;
+  font-family: arial, sans-serif;
+  font-size: 16px;
+  position: relative;
+  top: -25px;
+}
+
+.separator {
+  right: 5px;
+}
+
+#fahrenheit-link {
+  color: rgb(112, 117, 122);
+  right: 12px;
 }
