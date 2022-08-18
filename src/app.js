@@ -48,6 +48,72 @@ function formatDate(date) {
 let newDate = document.querySelector(" .weekDays");
 newDate.innerHTML = `${formatDate(currentTime)}`;
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  return days[day];
+}
+
+function displayWeatherForecast(response) {
+  console.log(response.data.daily);
+
+  let forecast = response.data.daily;
+
+  let forecastElement = document.querySelector("#forecast-block");
+
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
+        <ul class="future-weather">
+          <li class="day-week">${formatDay(forecastDay.dt)}</li>
+          <li>
+            <img
+              src="http://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png"
+              alt="thunderstorms in places"
+              id="icon-forecast"
+            />
+          </li>
+          <li class="temperature-forecast> <span"id="day-temperature">${Math.round(
+            forecastDay.temp.day
+          )}°</span>
+          <span id="night-temperature">${Math.round(
+            forecastDay.temp.night
+          )}°</span>
+          </li>
+        </ul>
+      </div>
+    `;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "c00b6e3e1cc217d87916a8b794f7ca77";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayWeatherForecast);
+}
+
 function showWeather(response) {
   console.log(response.data);
 
@@ -73,6 +139,8 @@ function showWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {

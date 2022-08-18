@@ -50,14 +50,7 @@ a {
 
 .future-weather {
   list-style-type: none;
-}
-
-.icon {
-  font-size: 30px;
-}
-
-.day-temperature {
-  font-weight: bold;
+  padding-left: 5px;
 }
 
 .coders-name {
@@ -71,6 +64,10 @@ a {
   margin-left: 70px;
 }
 
+.separator {
+  right: 5px;
+}
+
 #celsius-link,
 #fahrenheit-link,
 .separator {
@@ -82,11 +79,15 @@ a {
   top: -25px;
 }
 
-.separator {
-  right: 5px;
-}
-
 #fahrenheit-link {
   color: rgb(112, 117, 122);
   right: 12px;
+}
+
+#icon-forecast {
+  width: 70px;
+}
+
+#night-temperature {
+  opacity: 0.8;
 }
